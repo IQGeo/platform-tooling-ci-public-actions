@@ -1,4 +1,4 @@
-name: 'generic build image template'
+name: 'IQGeo test action'
 inputs:
   version:
     type: string
