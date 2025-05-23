@@ -1,0 +1,35 @@
+name: 'IQGeo test action'
+inputs:
+  version:
+    type: string
+  tag:
+    type: string
+  platform:
+    type: string
+  module:
+    type: string      
+  registry_login_server:
+    type: string
+  registry_username:
+    type: string
+  registry_password:
+    type: string 
+  dockerfile_path:
+    type: string
+  docker_context:
+    type: string
+  HARBOR_CLI_SECRET:
+    type: string
+  HARBOR_USERNAME:
+    type: string
+
+runs:
+    using: "composite"
+    steps:
+      - name: 'Checkout GitHub Action'
+        uses: actions/checkout@main
+
+      - name: Echo success
+        shell: bash
+        run: |
+          echo "Hit test action in actions repo"
